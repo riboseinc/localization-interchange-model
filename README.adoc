@@ -1,0 +1,36 @@
+= JLI
+
+JSON Localization Interchange
+
+== Motivation
+
+To have a standard format to store localization (l10n) strings.
+
+== Goals
+
+. template/source document + JLI = localized document
+. support typed parameters (number, date, time, datetime, string, coordinate, etc)
+. support interpolation, e.g. references to other strings defined
+. extension interface to support programmable extensions to interpolation implementations
+. support CLDR l10n features, like rules for date time, units, plurals via extension interface
+
+== Definitions
+
+locale:: combination of parameters preferred by a given community (e.g. language, geographic area, and other cultural, administrative or technical preferences) (modified from ISO 22274:2013(en), 3.20)
+internationalization:: I18N. process of making information in a way that allows for and facilitates the adaptation to local languages and cultural conventions (modified from ISO 22274:2013(en), 3.16)
+localization:: process of making information appropriate to the target locale where it will be used
+internationalized document:: a document that has undergone internationalization
+localized document:: a document that has undergone localization
+
+Let `${SCHEME}` be a yet-to-be-determined string, e.g, `xl`, `translate`.
+
+[source]
+----
+${SCHEME}://documentname/stringid
+${SCHEME}://documentname/stringid#en
+${SCHEME}://documentname/en/stringid
+${SCHEME}://documentname/stringid#en-latin
+${SCHEME}://documentname/en-latin/stringid
+----
+
+TBC
